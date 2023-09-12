@@ -62,25 +62,18 @@ function GetThesaurus(Choice)
 
     if Choice==1 then
         file = io.open(ciku1, "r")
-        Number = 3289
     elseif Choice==2 then
         file = io.open(ciku2, "r")
-        Number = 6097
     elseif Choice==3 then
         file = io.open(ciku3, "r")
-        Number = 7757
     elseif Choice==4 then
         file = io.open(ciku4, "r")
-        Number = 5663
     elseif Choice==5 then
         file = io.open(ciku5, "r")
-        Number = 8895
     elseif Choice==6 then
         file = io.open(ciku6, "r")
-        Number = 13514
     elseif Choice==7 then
         file = io.open(ciku7, "r")
-        Number = 9698
     else
         return "您的程序出现问题，请检查"
     end
@@ -93,7 +86,7 @@ function GetThesaurus(Choice)
         local data = json.decode(json_data)
 
         -- 选择第一个数据条目
-        local key = data[ranint(0,Number)]
+        local key = data[ranint(0,#data)]
 
         -- 输出单词
         output = output .. key.word .. ":" .. "\n" 
